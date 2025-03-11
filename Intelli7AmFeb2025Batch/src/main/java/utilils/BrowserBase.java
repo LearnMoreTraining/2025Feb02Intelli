@@ -8,7 +8,6 @@ import org.openqa.selenium.safari.SafariDriver;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
 
@@ -16,20 +15,20 @@ public class BrowserBase {
 
     WebDriver driver ;
 
-    public void browserBase() throws IOException {
+    public WebDriver browserBase() throws IOException {
         File f = new File("src/main/resources/confi/frameworkconfig.properties");
         FileInputStream fis = new FileInputStream(f);
         Properties prop = new Properties();
         prop.load(fis);
         prop.getProperty("browser"); // chrome
 
-        if(prop.getProperty("browser").equals("chrome")){
+        if(prop.getProperty("browser").equalsIgnoreCase("chrome")){
             driver = new ChromeDriver();
         }
-        else if(prop.getProperty("browser").equals("edge")){
+        else if(prop.getProperty("browser").equalsIgnoreCase("edge")){
             driver = new EdgeDriver();
         }
-        else if(prop.getProperty("browser").equals("safari")){
+        else if(prop.getProperty("browser").equalsIgnoreCase("safari")){
             driver = new SafariDriver();
         }
         else{
@@ -37,5 +36,7 @@ public class BrowserBase {
         }
 
         driver.get(prop.getProperty("environment"));
+
+        return driver;
     }
 }

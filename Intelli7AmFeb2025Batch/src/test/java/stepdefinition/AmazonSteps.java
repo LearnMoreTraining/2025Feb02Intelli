@@ -12,6 +12,9 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
+import utilils.BrowserBase;
+
+import java.io.IOException;
 
 public class AmazonSteps {
 
@@ -19,10 +22,9 @@ public class AmazonSteps {
     WebElement categoryDropdownNode ;
 
     @Given("user navigate to amazon homepage")
-    public void homePage(){
-
-      driver = new EdgeDriver(); // local variable
-       driver.get("https://www.amazon.in/");
+    public void homePage() throws IOException {
+        BrowserBase b = new BrowserBase();
+      driver =  b.browserBase(); //return
     }
 
     @When("user enter the search keyword {string}")
