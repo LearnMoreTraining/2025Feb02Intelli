@@ -9,7 +9,7 @@ Feature: Key function of HomePage
 
   @sc02 @smoke
   Scenario: Drop down values
-    Given user navigate to amazon homepage
+   # Given user navigate to amazon homepage
     When user extracts the dropdown values
     And user select the value from the dropdown
     Then user validates the dropdown values
