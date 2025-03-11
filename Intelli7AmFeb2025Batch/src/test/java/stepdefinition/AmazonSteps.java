@@ -42,7 +42,7 @@ public class AmazonSteps {
 
     @Then("user validates the dropdown values")
     public void validateDropdownValues() {
-
+        driver.findElement(By.id("twotabsearchtextbox")).sendKeys("productName");
     }
 
     @Then("validate the title of the page")
