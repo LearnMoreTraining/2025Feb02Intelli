@@ -5,8 +5,11 @@ import org.openqa.selenium.WebDriver;
 
 public class AmazonHomePage {
 
-    WebDriver driver ;
+   private WebDriver driver ;
 
+    public AmazonHomePage(WebDriver driver){
+        this.driver = driver;
+    }
     public void enterProductName(String productName){
 
         driver.findElement(By.id("twotabsearchtextbox")).sendKeys(productName);

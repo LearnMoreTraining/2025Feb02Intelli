@@ -2,7 +2,7 @@ Feature: Key function of HomePage
 
   @sc01 @smoke @regession
   Scenario: Search function
-    Given user navigate to amazon homepage
+   # Given user navigate to amazon homepage
     When user enter the search keyword "iphone"
     And user clicks the search icon
     Then validate the title of the page
