@@ -5,6 +5,7 @@ public class Constructorxample {
     static int a ;
     static int b ;
 
+    public Constructorxample(int a){
 
     }
 
