@@ -4,9 +4,14 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.Test;
+import utilils.TestContext;
 
 public class SalesForceSteps {
-    
+    TestContext context;
+    public SalesForceSteps(TestContext context){
+        this.context = context;
+    }
     @Given("user navigate to the salesforce login page")
     public void salesforceLogin(){
         
@@ -24,6 +29,8 @@ public class SalesForceSteps {
     public void verify_the_error_message(String string) {
 
     }
+
+
 
 
 }

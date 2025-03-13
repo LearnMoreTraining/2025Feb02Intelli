@@ -3,6 +3,7 @@ package utilils;
 import org.openqa.selenium.WebDriver;
 import pageobjects.AmazonHomePage;
 import pageobjects.SearchResultPage;
+import pageobjects.WikiHomePage;
 
 public class PageObjectManager {
 
@@ -20,5 +21,10 @@ public class PageObjectManager {
     public SearchResultPage searchResultPage(){
         SearchResultPage s = new SearchResultPage(driver);
         return s;
+    }
+
+    public WikiHomePage wikiHomePage(){
+        WikiHomePage wikiPage = new WikiHomePage(driver);
+        return wikiPage;
     }
 }

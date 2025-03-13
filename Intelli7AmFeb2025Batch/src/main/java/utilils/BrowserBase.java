@@ -16,27 +16,27 @@ public class BrowserBase {
     WebDriver driver ;
 
     public WebDriver browserBase() throws IOException {
-        File f = new File("src/main/resources/confi/frameworkconfig.properties");
-        FileInputStream fis = new FileInputStream(f);
-        Properties prop = new Properties();
-        prop.load(fis);
-        prop.getProperty("browser"); // chrome
 
-        if(prop.getProperty("browser").equalsIgnoreCase("chrome")){
-            driver = new ChromeDriver();
-        }
-        else if(prop.getProperty("browser").equalsIgnoreCase("edge")){
-            driver = new EdgeDriver();
-        }
-        else if(prop.getProperty("browser").equalsIgnoreCase("safari")){
-            driver = new SafariDriver();
-        }
-        else{
-           throw new InvalidArgumentException("Enter the valid browser name");
-        }
+        if(driver == null) {
 
-        driver.get(prop.getProperty("environment"));
+            File f = new File("src/main/resources/confi/frameworkconfig.properties");
+            FileInputStream fis = new FileInputStream(f);
+            Properties prop = new Properties();
+            prop.load(fis);
+            prop.getProperty("browser"); // chrome
 
+            if (prop.getProperty("browser").equalsIgnoreCase("chrome")) {
+                driver = new ChromeDriver();
+            } else if (prop.getProperty("browser").equalsIgnoreCase("edge")) {
+                driver = new EdgeDriver();
+            } else if (prop.getProperty("browser").equalsIgnoreCase("safari")) {
+                driver = new SafariDriver();
+            } else {
+                throw new InvalidArgumentException("Enter the valid browser name");
+            }
+
+            driver.get(prop.getProperty("environment"));
+        }
         return driver;
     }
 }

@@ -29,9 +29,7 @@ public class AmazonSteps {
     @When("user enter the search keyword {string}")
     public void userEnterTheSearchKeyword(String productName) {
 
-        context.pom.amazonHomePage().enterProductName("iphone");
-        context.pom.amazonHomePage().clickSearchIcon();
-
+       context.pom.amazonHomePage().clickSearchIcon();
  }
 
     @And("user clicks the search icon")
