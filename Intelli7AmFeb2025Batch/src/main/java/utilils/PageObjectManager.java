@@ -2,6 +2,7 @@ package utilils;
 
 import org.openqa.selenium.WebDriver;
 import pageobjects.AmazonHomePage;
+import pageobjects.LearnMorePage;
 import pageobjects.SearchResultPage;
 import pageobjects.WikiHomePage;
 
@@ -26,5 +27,10 @@ public class PageObjectManager {
     public WikiHomePage wikiHomePage(){
         WikiHomePage wikiPage = new WikiHomePage(driver);
         return wikiPage;
+    }
+
+    public LearnMorePage learnMorePage(){
+        LearnMorePage lmti = new LearnMorePage(driver);
+        return lmti;
     }
 }

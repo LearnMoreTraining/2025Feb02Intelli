@@ -33,4 +33,11 @@ public class WikiSteps {
     public void validateTheMappingOfYearToFortuneValues() {
 
     }
+
+    @Given("Validate the text")
+    public void validateTheText() {
+
+        context.pom.learnMorePage().clickChangeText();
+        Assert.assertEquals("Hello, Learn More Aspirants",context.pom.learnMorePage().getChangeText());
+    }
 }

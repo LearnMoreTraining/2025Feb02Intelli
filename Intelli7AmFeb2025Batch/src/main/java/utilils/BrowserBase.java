@@ -9,6 +9,7 @@ import org.openqa.selenium.safari.SafariDriver;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.Properties;
 
 public class BrowserBase {
@@ -34,9 +35,14 @@ public class BrowserBase {
             } else {
                 throw new InvalidArgumentException("Enter the valid browser name");
             }
-
-            driver.get(prop.getProperty("environment"));
+          //  driver.get(prop.getProperty("environment"));
+            driver.navigate().to(prop.getProperty("environment"));
+            driver.navigate().refresh();
+         //   driver.navigate().back();
+            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+            driver.manage().window().maximize();
         }
+
         return driver;
     }
 }
