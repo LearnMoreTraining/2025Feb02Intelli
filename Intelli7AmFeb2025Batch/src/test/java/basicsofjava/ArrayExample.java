@@ -4,7 +4,11 @@ public class ArrayExample {
 
     public static void main(String[] args) {
 
-        int [] a = {12,56,89,90}; //0,1,2,3 length - 4
+        int [] a = {12,56,89,90};//0,1,2,3 length - 4
+
+        for(int u:a){
+            System.out.println(u);
+        }
         String [] b = {"lmti","learn","more"}; //0,1,2 length - 3
 
         System.out.println(a[2]);
