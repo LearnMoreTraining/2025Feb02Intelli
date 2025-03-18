@@ -17,6 +17,7 @@ public class ListExample {
         l.add(121);
         l.add(121);
         l.add(121);
+        l.add(3,22);
         System.out.println(l);
 
         for(int k:l){

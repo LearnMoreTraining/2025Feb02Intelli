@@ -29,7 +29,7 @@ public class AmazonSteps {
     @When("user enter the search keyword {string}")
     public void userEnterTheSearchKeyword(String productName) {
 
-       context.pom.amazonHomePage().clickSearchIcon();
+       context.pom.amazonHomePage().enterProductName(productName);
  }
 
     @And("user clicks the search icon")
@@ -40,6 +40,7 @@ public class AmazonSteps {
     @Then("user validates the dropdown values")
     public void validateDropdownValues() {
 
+        Assert.assertEquals("it failed in ","","");
     }
 
     @Then("validate the title of the page")
