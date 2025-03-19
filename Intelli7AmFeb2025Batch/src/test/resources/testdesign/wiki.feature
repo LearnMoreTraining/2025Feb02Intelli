@@ -1,3 +1,4 @@
+@Regression
 Feature: wiki page automation
 
   @Wiki01

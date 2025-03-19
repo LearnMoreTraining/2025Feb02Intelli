@@ -8,6 +8,7 @@ import org.openqa.selenium.safari.SafariDriver;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.time.Duration;
 import java.util.Properties;
@@ -16,14 +17,23 @@ public class BrowserBase {
 
     WebDriver driver ;
 
-    public WebDriver browserBase() throws IOException {
+    public WebDriver browserBase() {
 
         if(driver == null) {
 
             File f = new File("src/main/resources/confi/frameworkconfig.properties");
-            FileInputStream fis = new FileInputStream(f);
+            FileInputStream fis = null;
+            try {
+                fis = new FileInputStream(f);
+            } catch (FileNotFoundException e) {
+                throw new RuntimeException(e);
+            }
             Properties prop = new Properties();
-            prop.load(fis);
+            try {
+                prop.load(fis);
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
             prop.getProperty("browser"); // chrome
 
             if (prop.getProperty("browser").equalsIgnoreCase("chrome")) {
