@@ -16,13 +16,13 @@ Feature: Key function of HomePage
 
     @sc05
   Scenario: Mouse Handling
-    Given user navigate to amazon homepage
+   # Given user navigate to amazon homepage
     When user clicks on baby wishlist
     Then user validate the field name
 
     @sc03
   Scenario Outline: Search function with multiple test data
-    Given user navigate to amazon homepage
+   # Given user navigate to amazon homepage
     When user enter the search keyword "<SearchInput>"
     And user clicks the search icon
     Then validate the title of the page

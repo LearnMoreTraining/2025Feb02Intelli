@@ -40,4 +40,9 @@ public class WikiSteps {
         context.pom.learnMorePage().clickChangeText();
         Assert.assertEquals("Hello, Learn More Aspirants",context.pom.learnMorePage().getChangeText());
     }
+
+    @Given("user handles the drag and drop")
+    public void userHandlesTheDragAndDrop() {
+        context.pom.amazonHomePage().handleDrag();
+    }
 }

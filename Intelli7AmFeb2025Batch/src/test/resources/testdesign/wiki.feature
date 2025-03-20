@@ -9,3 +9,7 @@ Feature: wiki page automation
     @lm01
   Scenario: waits
     Given Validate the text
+
+      @drag
+      Scenario: drag and drop
+        Given user handles the drag and drop

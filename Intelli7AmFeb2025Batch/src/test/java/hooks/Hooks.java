@@ -22,7 +22,7 @@ public class Hooks {
 
     @After
     public void postCondition()  {
-       context.browser.browserBase().close();
+       context.browser.browserBase().quit();
         System.out.println("execution stop");
     }
 

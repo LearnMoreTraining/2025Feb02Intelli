@@ -79,12 +79,9 @@ public class AmazonSteps {
 
     @When("user clicks on baby wishlist")
     public void clickBabyList() {
-//        WebElement accountListSection = driver.findElement(By.id("nav-link-accountList-nav-line-1"));
-//
-//        Actions actions = new Actions(driver);
-//        actions.clickAndHold(accountListSection).build().perform();
-//        driver.findElement(By.linkText("Baby Wishlist")).click();
-//     //   driver.findElement(By.partialLinkText("by Wish")).click();
+
+        Assert.assertEquals("Baby Wishlist",context.pom.amazonHomePage().howerOverAccount().switchToWindow());
+
     }
 
     @Then("user validate the field name")
