@@ -5,6 +5,9 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Test;
+import org.openqa.selenium.By;
+import org.openqa.selenium.StaleElementReferenceException;
+import org.openqa.selenium.WebElement;
 import utilils.TestContext;
 
 public class SalesForceSteps {
@@ -19,6 +22,25 @@ public class SalesForceSteps {
 
     @When("user enter the username {string} and password {string}")
     public void user_enter_the_username_and_password(String string, String string2) {
+
+       WebElement username = context.browser.browserBase().findElement(By.id("username"));
+       WebElement pasword =  context.browser.browserBase().findElement(By.id("password"));
+
+       username.sendKeys("anc");
+       pasword.sendKeys("123");
+
+        context.browser.browserBase().navigate().refresh();
+        try {
+            username.sendKeys("anc");
+            pasword.sendKeys("123");
+        }
+        catch (StaleElementReferenceException e){
+             username = context.browser.browserBase().findElement(By.id("username"));
+             pasword =  context.browser.browserBase().findElement(By.id("password"));
+            username.sendKeys("anc");
+            pasword.sendKeys("123");
+        }
+
 
     }
     @When("user clicks the login button")
