@@ -10,7 +10,9 @@ public class ArrayExample {
             System.out.println(u);
         }
         String [] b = {"lmti","learn","more"}; //0,1,2 length - 3
-
+            for(String g:b){
+                System.out.println(g);
+            }
         System.out.println(a[2]);
         System.out.println(b[2]);
         System.out.println(a.length);

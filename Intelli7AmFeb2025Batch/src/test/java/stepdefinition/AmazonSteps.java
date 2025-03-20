@@ -90,4 +90,12 @@ public class AmazonSteps {
     //    Assert.assertEquals("Your -stop wishlist for all your baby and pregnancy needs.",  driver.findElement(By.xpath("//P[@class='a-spacing-none a-size-base-plus']")).getText());
       //  driver.findElement(By.cssSelector(".a-spacing-none.a-size-base-plus"));
     }
+
+    @Given("user handles the alert")
+    public void userHandlesTheAlert() {
+        context.browser.browserBase().findElement(By.cssSelector(".btn.btn-danger")).click();
+        context.browser.browserBase().switchTo().alert().sendKeys("abc");
+        context.browser.browserBase().switchTo().alert().accept();
+        System.out.println( context.browser.browserBase().switchTo().alert().getText());
+    }
 }

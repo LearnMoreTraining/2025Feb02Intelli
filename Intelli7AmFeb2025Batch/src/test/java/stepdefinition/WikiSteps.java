@@ -32,6 +32,10 @@ public class WikiSteps {
     @Then("validate the mapping of year to fortune values")
     public void validateTheMappingOfYearToFortuneValues() {
 
+
+
+        Assert.assertEquals("14.81%",context.pom.wikiHomePage().getShareHoldingHolder().get("Public"));
+        Assert.assertEquals("0.25%",context.pom.wikiHomePage().getShareHoldingHolder().get("Others").trim());
     }
 
     @Given("Validate the text")

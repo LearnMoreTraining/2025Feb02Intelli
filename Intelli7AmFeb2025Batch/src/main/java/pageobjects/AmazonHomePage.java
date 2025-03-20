@@ -69,7 +69,6 @@ public class AmazonHomePage {
 
     }
 
-
     public void handleDrag(){
         driver.switchTo().frame(driver.findElement(By.className("demo-frame")));
         WebElement drag = driver.findElement(By.id("draggable"));
@@ -77,5 +76,7 @@ public class AmazonHomePage {
         Actions a = new Actions(driver);
         a.dragAndDrop(drag,drop).build().perform();
     }
+
+
 
 }
